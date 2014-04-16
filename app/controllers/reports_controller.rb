@@ -88,6 +88,7 @@ class ReportsController < ApplicationController
       "reference_number",
       "tmp_reference_number",
       "tmp_reference_string",
+      "arrangement_note",
     ]
 =begin
       "unit_type",
