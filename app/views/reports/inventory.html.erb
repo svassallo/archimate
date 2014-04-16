@@ -200,48 +200,48 @@
               <% end %>
             <% end %>
             <% if u.unit_langs.present? %>
-            <br/>
-			<div>
-				<p>
-                    <strong class="field-header">Lingue della documentazione:</strong>
+              <br/>
+              <div>
+                <p>
+                  <strong class="field-header">Lingue della documentazione:</strong>
                 </p>
                 <% u.unit_langs.each do |l| %>
-					<%= show_item(l.code) %>
-					<br/>
-				<% end %>
-			</div>
-			<% end %>
-			<% if u.unit_other_reference_numbers.present? %>	
-			<br/>
-			<div>
-				<p>
-                    <strong class="field-header">Altre segnature:</strong>
+		  <%= show_item(l.code) %>
+		  <br/>
+		<% end %>
+	      </div>
+            <% end %>
+	    <% if u.unit_other_reference_numbers.present? %>	
+	      <br/>
+	      <div>
+	        <p>
+                  <strong class="field-header">Altre segnature:</strong>
                 </p>
-				<% u.unit_other_reference_numbers.each do |s| %>
-					<%= s.other_reference_number %><%if s.qualifier.present? %> [<%= s.qualifier %>]<% end %>
-					<%if s.note.present? %> {<%= s.note %>}<% end %>
-					<br/>
-				<% end %>
-			</div>	
-			<% end %>
-			<% if u.headings.present? %>	
-			<br/>
-			<div>
-				<p>
-                    <strong class="field-header">Voci di indice:</strong>
+		<% u.unit_other_reference_numbers.each do |s| %>
+		  <%= s.other_reference_number %><%if s.qualifier.present? %> [<%= s.qualifier %>]<% end %>
+		  <%if s.note.present? %> {<%= s.note %>}<% end %>
+		  <br/>
+		<% end %>
+	      </div>	
+	    <% end %>
+	    <% if u.headings.present? %>	
+	      <br/>
+	      <div>
+	        <p>
+                  <strong class="field-header">Voci di indice:</strong>
                 </p>
-				<% u.headings.each do |h| %>
-					[<%= h.heading_type %>] <%= h.name %><%if h.qualifier.present? %>, <%= h.qualifier %><% end %>
+		<% u.headings.each do |h| %>
+		  [<%= h.heading_type %>] <%= h.name %><%if h.qualifier.present? %>, <%= h.qualifier %><% end %>
 					<%if h.dates.present? %>(<%= h.dates %>)<% end %><!--[if supportFields]><span style='mso-fareast-font-family:
 "Times New Roman"'><span style='mso-element:field-begin'></span></span> XE &quot;<span
 style='mso-fareast-font-family:"Times New Roman"'><%= h.name %></span>&quot; <![endif]--><!--[if supportFields]><span
 style='mso-fareast-font-family:"Times New Roman"'><span style='mso-element:
 field-end'></span></span><![endif]-->
-					<br/>
-				<% end %>
-			</div>	
-			<br/>
-			<% end %>
+		  <br/>
+		<% end %>
+	      </div>	
+	      <br/>
+	    <% end %>
           </div>
         <% end %>
       <% end %>
